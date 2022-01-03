@@ -1,0 +1,41 @@
+/*
+CSS composed by Souvik Das <souvik1982@gmail.com>
+for his website. Please take permission from him if
+you choose to use or distribute it.
+March 29, 2016
+*/
+
+body
+{
+  font-family: Optima, sans-serif;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+p
+{
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+table
+{
+  border-collapse: collapse;
+}
+
+td, th
+{
+  padding: 15px;
+} 
+
+.panel
+{
+  background-color: linen;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: 1px solid red;
+}
