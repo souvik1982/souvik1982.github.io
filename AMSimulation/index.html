@@ -1,0 +1,50 @@
+<html>
+ <head>
+  <title>CMS Tracking Trigger with Associative Memories</title>
+  <meta name="author" content="Souvik Das"/>
+  <meta name="keywords" content="souvik, das, associative memory, track, trigger, Super LHC"/>
+  <meta name="description" content="Compact Muon Solenoid Associative Memory Track Triggering"/>
+  <link rel="StyleSheet" type="text/css" href="../souvik.css" />
+ </head>
+ <body>
+  <h1 align="center">CMS Tracking Trigger with Associative Memories</h1>
+  
+  <p> The CMS Experiment is preparing for the High Luminosity LHC in 2023 with proton-proton collisions at 14 TeV, peak instantaneous luminosities of 5×10<sup>34</sup>cm<sup>−2</sup>s<sup>−1</sup> and an average of 140 inelastic collisions per bunch crossing. Such a scenario will necessitate real time particle tracking in dedicated trigger hardware operating at 40 MHz in order to mitigate the effects of pileup and generic QCD backgrounds so that CMS can collect interesting data that may lead to discoveries. </p>
+
+  <p>
+
+
+In 2023 the Large Hadron Collider (LHC) will collide protons at higher energies and orders of magnitudes higher rates in order to explore physical processes beyond the Standard Model of particle physics. An order of magnitude higher rate of collisions poses a challenge to the CMS detector that will collect data of the products of those collisions – the apparatus has to autonomously decide in real time, i.e. every 25 nanoseconds, whether or not a collision event is interesting enough to store for future analysis. This is a very challenging problem and we hope to do this by identifying and reconstructing the tracks of charged particles emerging from the collision point using dedicated hardware chips. Such detailed information on the quality of every track will allow the chips to trigger on interesting events and store them for analysis. This is a problem of pattern-recognition under extremely rapid data-taking conditions, and the chips we are designing for this will not be built in 2D silicon wafers but 3D cubes of silicon where circuits will run along all three dimensions. The research and development for these LHC upgrades push the limits of modern computing and chip fabrication while allowing us to peer deeper into the fabric of nature than ever before. </p>
+
+  <p> I occupy a leading role in the R&D of this system being carried out at the Fermi National Accelerator Laboratory and the University of Florida. I contributed seminally to the development of software simulations that determine how many patterns need to be stored in these 3D chips in order to extract the best data for physics analyses, and continue to lead its development. I also invented an algorithm now known as the “Analytical Track Fitter” that can be implemented on a chip to determine the curvature and directions of the charged tracks after they are identified with extreme rapidity. On a larger scale, I also lead the over-arching design of the system and have developed algorithms and software to identify bottlenecks and streamline the entire chain of this triggering system. This requires a detailed understanding of all R&D aspects for this project, from physics, algorithms, software, firmware to hardware, and I am entrusted with leading this project that will be critical for the LHC to take data in the near future. </p>
+  
+  <table border="0" style="margin-left:2em; margin-right:2em;">
+   <tr>
+    <td class="panel">
+     <h2 align="center"> Associative Memory Simulation </h2>
+     <p> Contributed to the development of the software. </p>
+     <p> <a href=""https://github.com/souvik1982/SLHCL1TrackTriggerSimulations">https://github.com/souvik1982/SLHCL1TrackTriggerSimulations</a> </p>
+    </td>
+    <td class="panel">
+     <h2 align="center"> Analytical Track Fitter </h2>
+     <p> A new solution for rapid chi-square based track fitting in FPGAs. </p>
+    </td>
+   </tr>
+   <tr>
+    <td class="panel">
+     <h2 align="center"> Timing Model for the Pattern Recognition Mezzanine (PRM) </h2>
+     <p> A timing model. </p>
+     <p> <a href="https://github.com/souvik1982/AMTiming">https://github.com/souvik1982/AMTiming</a> </p>
+    </td>
+    <td class="panel">
+     <h2 align="center"> Timing Model for the Pattern Recognition Board (PRB) </h2>
+     <p> A timing model. </p>
+     <p> <a href="https://github.com/souvik1982/PRBTiming">https://github.com/souvik1982/PRBTiming</a> </p>
+    </td>
+   </tr>
+  </table>
+      
+    
+    
+ </body>
+</html>
