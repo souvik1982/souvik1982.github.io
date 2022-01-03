@@ -1,0 +1,68 @@
+<html>
+ <head>
+ <link rel="StyleSheet" type="text/css" href="../souvik.css"/>
+ <link rel="StyleSheet" type="text/css" href="../gallery.css"/>
+ <style>
+   .avatar {
+     border-radius:1%;
+   }
+ </style>
+ </head>
+ <body>
+  <br/>
+  <h2 align="center"> Amateur Pottery </h2>
+
+  <p align="center">
+    I have been training at <a href="http://www.handsofthepotter.com/">Gail Johnston's studio</a> in West Lafayette, Indiana since the summer of 2019. <br/>
+  </p>
+
+  <hr size="1"/>
+  <div class="row" style="text-align: right">
+    <div class="column">
+      <img src="pics/BisquedBowl_20190708.jpg" style="height:10%" onclick="myFunction(this);"
+      alt="Fired bowl. July 8, 2019">
+    </div>
+    <div class="column">
+      <img src="pics/GlazedBowl_20190806.jpg" style="height:10%" onclick="myFunction(this);"
+      alt="Glazed bowl. August 6, 2019">
+    </div>
+    <div class="column">
+      <img src="pics/BisquedMug_20190806.jpg" style="height:10%" onclick="myFunction(this);"
+      alt="Fired mug. August 6, 2019">
+    </div>
+    <div class="column">
+      <img src="pics/GlazedMug_20190814.jpg" style="height:10%" onclick="myFunction(this);"
+      alt="Glazed mug. August 14, 2019">
+    </div>
+    <div class="column">
+      <img src="pics/GlazedBox_20191119.jpg" style="height:10%" onclick="myFunction(this);"
+      alt="Glazed ornament box. November 19, 2019">
+    </div>
+    <div class="column">
+      <img src="pics/ThrownCasserole_20191218.jpg" style="height:10%" onclick="myFunction(this);"
+      alt="Thrown casserole. December 18, 2019">
+    </div>
+    <div class="column">
+      <img src="pics/GlazedCasserole_20200122.jpg" style="height:10%" onclick="myFunction(this);"
+      alt="Glazed casserole. January 22, 2020">
+    </div>
+  </div>
+  <hr size="1"/>
+  <div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%" class="avatar" border="1">
+    <div id="imgtext"></div>
+  </div>
+
+  <script>
+    function myFunction(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      var imgText = document.getElementById("imgtext");
+      expandImg.src = imgs.src;
+      imgText.innerHTML = imgs.alt;
+      expandImg.parentElement.style.display = "block";
+    }
+  </script>
+
+ </body>
+</html>
