@@ -1,0 +1,33 @@
+Pixel Online Software RCMS - XDAQ Integration Status 6/27/02
+------------------------------------------------------------
+
+  1. Pixel Function Manager has been implemented within the 
+  Level One Template provided by the RCMS group.
+  
+  2. It can send SOAP messages to PixelSupervisor
+  
+	3. Am yet to find out how to send additional parameters 
+  with a command 
+  (ex. Configure needs a parameter for Configuration Alias)
+  
+  4. xdaq2rc objects added to PixelSupervisor. 
+  Don't know how to receive SOAP messages from Function Manager's end
+
+Alex Oh said he would help me out with 3 & 4 in person tomorrow.
+
+  5. DAQKit 04-02-01 installed in cmsfpix1:/home/souvik
+  
+  6. TriDAS/pixel ported to 64 bit XDAQ (3.7.3)
+  
+  7. Updated to the new state machine in PixelSupervisor. 
+  (With the "Stop" transition.)
+  
+  8. Every XDAQ Application must now be within a *group* and a *zone*. 
+  CMS Pixels has been assigned zone name "cms.pixel" by the Run Control folks
+  I propose we put all the DAQ applications like PixelSupervisor,
+  PixelFEC/FED/TKFEC/TTC/Supervisors into the group "daq", 
+  and all the DCS applications like PixelDCSSupervisor, 
+  PixelDCStoFEDDpInterface into the group "dcs" etc. 
+  One application *can* have multiple groups
+  
+-Souvik Das

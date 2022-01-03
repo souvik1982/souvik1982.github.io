@@ -1,0 +1,460 @@
+    Pixel Online Software RCMS <-> XDAQ Integration Update
+    ------------------------------------------------------
+    
+Done so far:
+    
+1. RCMS can now Initialize. That means it can:
+  a. Retrieve details of Job Control from RS3
+  b. Use Job Control to start-up a XDAQ process
+  c. Load PixelSupervisor (and other Supervisors) into the XDAQ process
+  
+2. RCMS can now Configure. This means it can:
+  a. Get an Alias (aka RUN_TYPE) from the PixelFunctionManager's GUI
+  b. Send the command for "Configure" to underlying PixelSupervisors 
+     with the Alias (="PixelAlive" or something) appended.
+
+To do / To understand:
+
+1. XDAQ dies on trying to configure. That is probably because I still
+   have some hardware calls while I am not using any hardware.
+2. RCMS seems to happily go into the "Configured" state in spite of this!
+   I expected it to hang in the "Configuring" state.
+
+
+-Souvik Das
+7/18/07
+
+
+
+Error Log ----
+
+18 Jul 2007 14:11:1184764265 [3076379296] INFO  root <> - Logging to XML socket server cmsfpix2.cern.ch, port 2000
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+Entering transition INITALIZE
+0 PixelFECSupervisor(s) found in the "daq" group.
+0 PixelFEDSupervisor(s) found in the "daq" group.
+0 PixelTKFECSupervisor(s) found in the "daq" group.
+0 PixelLTCSupervisor(s) found in the "daq" group.
+0 PixelTTCSupervisor(s) found in the "daq" group.
+Exiting transition INITIALIZE
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+LogFile "/tmp/errorsLogFile.txt" opened in write mode
+GlobalErrorDispatcher(LID=31,Instance=0) ready
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+log4cplus:ERROR XMLAppender::append() - Cannot connect to server
+Opened:/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelConfigDataExamples/calib/3/calib.dat
+PixelCalib mode=PixelAlive
+Opened:/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelConfigDataExamples/detconfig/0/detectconfig.dat
+Read module:FPix_BmI_D1_BLD1_PNL1
+Read module:FPix_BmI_D1_BLD1_PNL1
+Read module:FPix_BmI_D1_BLD1_PNL2
+Read module:FPix_BmI_D1_BLD2_PNL1
+Read module:FPix_BmI_D1_BLD2_PNL2
+Read module:FPix_BmI_D1_BLD3_PNL1
+Read module:FPix_BmI_D1_BLD3_PNL2
+Opened:/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelConfigDataExamples/nametranslation/0/translation.dat
+FPix_BmI_D1_BLD1_PNL1_PLQ1_ROC0
+Could not look up module:FPix_BmI_D1_BLD1_PNL1
+Inserting new module:FPix_BmI_D1_BLD1_PNL1
+FPix_BmI_D1_BLD1_PNL1_PLQ1_ROC1
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ2_ROC0
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ2_ROC1
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ2_ROC2
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ2_ROC3
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ2_ROC4
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ2_ROC5
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC0
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC1
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC2
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC3
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC4
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC5
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC6
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ3_ROC7
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ4_ROC0
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ4_ROC1
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ4_ROC2
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ4_ROC3
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL1_PLQ4_ROC4
+Module:FPix_BmI_D1_BLD1_PNL1 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ1_ROC0
+Could not look up module:FPix_BmI_D1_BLD1_PNL2
+Inserting new module:FPix_BmI_D1_BLD1_PNL2
+FPix_BmI_D1_BLD1_PNL2_PLQ1_ROC1
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ1_ROC2
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ1_ROC3
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ1_ROC4
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ1_ROC5
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC0
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC1
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC2
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC3
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC4
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC5
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC6
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ2_ROC7
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC0
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC1
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC2
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC3
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC4
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC5
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC6
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC7
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC8
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD1_PNL2_PLQ3_ROC9
+Module:FPix_BmI_D1_BLD1_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ1_ROC0
+Could not look up module:FPix_BmI_D1_BLD2_PNL1
+Inserting new module:FPix_BmI_D1_BLD2_PNL1
+FPix_BmI_D1_BLD2_PNL1_PLQ1_ROC1
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ2_ROC0
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ2_ROC1
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ2_ROC2
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ2_ROC3
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ2_ROC4
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ2_ROC5
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC0
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC1
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC2
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC3
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC4
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC5
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC6
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ3_ROC7
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ4_ROC0
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ4_ROC1
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ4_ROC2
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ4_ROC3
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL1_PLQ4_ROC4
+Module:FPix_BmI_D1_BLD2_PNL1 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ1_ROC0
+Could not look up module:FPix_BmI_D1_BLD2_PNL2
+Inserting new module:FPix_BmI_D1_BLD2_PNL2
+FPix_BmI_D1_BLD2_PNL2_PLQ1_ROC1
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ1_ROC2
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ1_ROC3
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ1_ROC4
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ1_ROC5
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC0
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC1
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC2
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC3
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC4
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC5
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC6
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ2_ROC7
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC0
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC1
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC2
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC3
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC4
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC5
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC6
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC7
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC8
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD2_PNL2_PLQ3_ROC9
+Module:FPix_BmI_D1_BLD2_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ1_ROC0
+Could not look up module:FPix_BmI_D1_BLD3_PNL1
+Inserting new module:FPix_BmI_D1_BLD3_PNL1
+FPix_BmI_D1_BLD3_PNL1_PLQ1_ROC1
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ2_ROC0
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ2_ROC1
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ2_ROC2
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ2_ROC3
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ2_ROC4
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ2_ROC5
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC0
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC1
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC2
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC3
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC4
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC5
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC6
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ3_ROC7
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ4_ROC0
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ4_ROC1
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ4_ROC2
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ4_ROC3
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL1_PLQ4_ROC4
+Module:FPix_BmI_D1_BLD3_PNL1 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ1_ROC0
+Could not look up module:FPix_BmI_D1_BLD3_PNL2
+Inserting new module:FPix_BmI_D1_BLD3_PNL2
+FPix_BmI_D1_BLD3_PNL2_PLQ1_ROC1
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ1_ROC2
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ1_ROC3
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ1_ROC4
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ1_ROC5
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC0
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC1
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC2
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC3
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC4
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC5
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC6
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ2_ROC7
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC0
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC1
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC2
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC3
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC4
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC5
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC6
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC7
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC8
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+FPix_BmI_D1_BLD3_PNL2_PLQ3_ROC9
+Module:FPix_BmI_D1_BLD3_PNL2 already existing.
+Opened:/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelConfigDataExamples/fecconfig/0/fecconfig.dat
+Opened:/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelConfigDataExamples/fedconfig/0/fedconfig.dat
+Opened:/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelConfigDataExamples/portcardmap/0/portcardmap.dat
+Process [8049] terminates abnormally. Caught signal 6
+At address [0x1f71]
+Stacktrace follows:
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/toolbox/lib/linux/x86/libtoolbox.so(_ZN7toolbox10stacktraceEiRSo+0x59) [0xc8cd49]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/toolbox/lib/linux/x86/libtoolbox.so(_ZN7toolbox18signalSEGVCallbackEiP7siginfoPv+0x10e) [0xc8d0dc]
+/lib/tls/libpthread.so.0 [0x812f80]
+/lib/tls/libc.so.6(abort+0x1d5) [0x8f4705]
+/usr/lib/libstdc++.so.5 [0x8a34f7]
+/usr/lib/libstdc++.so.5 [0x8a3544]
+/usr/lib/libstdc++.so.5 [0x8a3567]
+/usr/lib/libstdc++.so.5(__cxa_call_unexpected+0x45) [0x8a33f5]
+/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelSupervisor/lib/linux/x86/libPixelSupervisor.so(_ZN15PixelSupervisor9ConfigureEN4xoap11CountingPtrINS0_11SOAPMessageENS0_24ThreadSafeReferenceCountENS0_20StandardObjectPolicyEEE+0x46ee) [0xdcf50e]
+/home/souvik/DAQKit_04_02_01/TriDAS/pixel/PixelSupervisor/lib/linux/x86/libPixelSupervisor.so(_ZN4xoap6MethodI15PixelSupervisorE6invokeENS_11CountingPtrINS_11SOAPMessageENS_24ThreadSafeReferenceCountENS_20StandardObjectPolicyEEE+0x76) [0xdefdc4]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/xdaq/executive/lib/linux/x86/libexecutive.so(_ZN4xdaq14SOAPDispatcher22processIncomingMessageEN4xoap11CountingPtrINS1_11SOAPMessageENS1_24ThreadSafeReferenceCountENS1_20StandardObjectPolicyEEE+0x5d08) [0xa9437e]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/pt/http/lib/linux/x86/libpthttp.so(_ZN4http12ReceiverLoop9onRequestERKSsS2_+0x2256) [0xbaab50]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/pt/http/lib/linux/x86/libpthttp.so(_ZN4http12ReceiverLoop7processEPN7toolbox4task8WorkLoopE+0x501) [0xba873d]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/pt/http/lib/linux/x86/libpthttp.so(_ZN7toolbox4task6ActionIN4http12ReceiverLoopEE6invokeEPNS0_8WorkLoopE+0x5a) [0xbb9a82]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/toolbox/lib/linux/x86/libtoolbox.so(_ZN7toolbox4task15WaitingWorkLoop7processEv+0x38) [0xcc6f3c]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/toolbox/lib/linux/x86/libtoolbox.so(_ZN7toolbox4task8WorkLoop3runEv+0x2a) [0xcc3e4c]
+/home/souvik/DAQKit_04_02_01/TriDAS/daq/toolbox/lib/linux/x86/libtoolbox.so(_ZN7toolbox4task11thread_funcEPv+0xc0) [0xcc2ef0]
+/lib/tls/libpthread.so.0 [0x80cdd8]
+/lib/tls/libc.so.6(__clone+0x5a) [0x9a7fca]

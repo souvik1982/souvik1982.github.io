@@ -1,0 +1,30 @@
+RUN CONTROL at USC
+------------------
+
+Done:
+
+1. Pixel Function Manager - Rest of POS Software has been integrated with Job Control and all that! POS can actually be run from Pixel Function Manager (aka Level 1 Function Manager)
+
+2. Our Run Control machine: cmsrc-pixel.cms (One must get sudoer permissions to get to it. Global Run participants who want to install/develop software please ask Danek or TBA FPix person.)
+
+3. RCMS 3.0.4p1 installed
+
+4. Apache Tomcat installed
+
+5. Access to Oracle Database had some IT trouble... but fixed today afternoon.
+
+To Do:
+
+1. Copy RS3 configuration from MySQL database, modify it for Point 5, and save into Oracle database.
+
+2. CVS checkout Pixel Function Manager and make sure it builds and deploys with RCMS 3.0.4
+
+3. Level 0 - Pixel Function Manager integration
+
+4. New TTS States of PixelSupervisor and PixelFEDSupervisor.
+
+5. New Global Configuration for Emulation Test DAC data... may need some modification of source code. Will work with Andres and Viktor on this today evening. Will test on Pilot Run detector.
+
+6. Pixel Function Manager - Pixel Supervisor on another machine (vmepcS2B18-07 to vmepcS2B18-16)
+
+-Souvik

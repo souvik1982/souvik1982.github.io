@@ -1,0 +1,22 @@
+CRUZET 2 - 11 June 2008
+===================
+
+Installation:
+1. RCMS 3.2.0 is installed.
+2. XDAQ Build 6
+3. POS_2_7_13 + (PixelSupervisor, PixelFunctionManager)
+
+Logging:
+1. Each XDAQ process is forwarding messages to the RCMS Logging Collector
+2. RCMS Logging Collector is forwarding to Central RCMS' Logging Collector
+3. A Chainsaw can be attached to our Logging Collector. Messages can be split by Supervisor, Function Manager, severity level etc.
+4. On clicking Destroy on the Function Manager, log files of all processes are moved from /tmp/ of the various machines to
+/nfshome0/pixelpro/TriDAS/pixel/PixelRun/Logs/Log_ddMMMyyyy_hh-mm-ss_GMT/xdaqjcPID*.log
+
+Run Numbers:
+1. During calibrations, Run Numbers are retrieved from RunInfo by PixelSupervisor. Login & password are required.
+
+HDD:
+1. Are they ready?
+
+-Souvik

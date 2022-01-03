@@ -1,0 +1,10 @@
+8/10/2006
+
+1. PixelFECSupervisor is probably ready. New features:
+   - Its own GUI. State Machine and Low Level commands.
+   - Configuration file in XML.
+   - Run sequence, consisting of multiple low level commands, can be dictated by an XML file. But previous capability of taking single low level commands from PixelSupervisor retained. (Will be extended to take a string of low level commands from PixelSupervisor in XML format via SOAP.)
+    Tested without hardware. Changes committed. Exception handling not very good in parsing code -- will fix that.
+
+2. PixelFEDSupervisor is being given the same makeover -- XML file for configuration data and its own GUI.
+   Currently it's XML parser is being tested. Nothing committed. Whatever is in CVS is steady and works.

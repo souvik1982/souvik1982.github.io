@@ -1,0 +1,12 @@
+So Far:
+
+1. Multiple FED Supervisors can be now supported. My quick fix is to identify XDAQ Application Instance Number = Crate Number
+2. Each FED Supervisor can open independent Low Level GUI for each FED on the crate as browser pop-up windows. (Disable pop-up blocking! And enable Javascript)
+3. Baseline Calibration has been modified to accomodate these upgrades
+4. A skeleton DCS Supervisor given to Angel and Andres which can talk to PixelSupervisor
+
+Next Steps:
+
+1. Modify Address Level and Gain Calibration algorithms
+2. Integration with RCMS
+3. PSX messages to PVSS from DCS Supervisor

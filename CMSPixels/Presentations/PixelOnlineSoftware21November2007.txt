@@ -1,0 +1,56 @@
+=== Pixel Preparation for the Global Run November 2007 ===
+
+
+Schedule Situation:
+
+1. We have been ready for an SLink test > 72 hours and are yet to receive a 
+   call from Global DAQ. Last I heard they were busy testing getting Global Trigger.
+
+2. Alex Oh asked me for an RS 3 Configuration for our participation in GREN and 
+   I gave him what we have. No complaints yet.
+
+
+Recent Progress and Observations:
+
+1. We corrected the problem that the FEDs were not listening for the 
+   LFF (backpressure) signal from the FRLs. This had to be set in the FED's
+   Mode Register.
+
+2. We solved the problem that the FEDs were not firing their TTS signals
+   according to the backpressure. This was due to wrong arguments passed in the
+   TTS initializing methods of the FEDs.
+
+3a. Locally we do cannot control the FRLs and hence cannot drain the SLinks.
+    Hence after ~ 300 L1A triggers, the FEDs' internal buffers 
+    (is this physically FIFO 3?) fill up and it send WARN followed by BUSY signals
+    on their TTS lines. This is seen in the FMM Controller and is also seen in the
+    LTC Control.
+
+3b. The Spy FIFO 3 data following this becomes junk after this. Usually all 0.
+
+4. Now if we disable the monitoring of the backpressure by setting the 
+   Mode Register = 0x8, we do see a Out-Of-Sync TTS signal after ~2 or 3 L1A triggers.
+
+5. We got FED Address Levels Calibration with Test DACs to work.
+
+6. We now have valid payload in the SLink data!
+
+7. Had to change the order of configuration of the Supervisors.
+   PixelTTCSupervisor has to be configured first else the TTC could be in some
+   cyclic trigger mode which sends the FEDs into BUSY/WARN TTS states immediately
+   locking up the LTC.
+
+8. The Out-Of-Sync is a more severe error than Busy according to the FMM (DAQ guidelines). 
+   However, according to the FED (manual page 28) the Busy is more important than the 
+   Out-Of-Sync. This requires us to *mask off* any Out-Of-Sync signals that the FED may 
+   generate using its mode registers because the FMM interprets it as the most severe 
+   problem and refuses to budge from that state until all FEDs are out of the OOS state. 
+
+9. Danek investigated this: The Error state is a blip instead of a steady signal. 
+   That may be the reason we never see the FMM go into the Error state.
+
+
+-Souvik
+
+
+====

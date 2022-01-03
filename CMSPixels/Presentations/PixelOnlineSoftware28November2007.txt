@@ -1,0 +1,16 @@
+=== Problems in Spy FIFO 3 Data ===
+
+1. Lots of 0x0, 0x0, 0x0... 0x0 events, especially at high frequencies (prescale < 1000)
+2. FED ID corrupted in SLink Header
+3. One junk work between a SLink Trailer and SLink Header
+
+Was not polling the 31st bit of the Central Chip's Control Register.
+Added a method in PixelFEDInterface to do that with Danek and Will's email and help.
+Now it seems 1 and 2 are gone.
+I've seen one instance of 3... am trying to do an organised test.
+
+-Souvik 28 November 2007
+
+===============
+
+

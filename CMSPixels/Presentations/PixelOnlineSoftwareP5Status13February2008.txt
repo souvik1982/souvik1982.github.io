@@ -1,0 +1,17 @@
+Point 5 Status - 13 February 2007
+========================
+
+Two outstanding problems remain:
+
+1. FED ID 11 seems to have a stuck bit. This is hinted by:
+    a. The FED ID is read as some impossible number because a high bit is stuck,
+    b. This FED gives CRC errors in every superfragment.
+
+2. For rates > 500 Hz, events start to go missing in the EVB and EVB throws sync-lost-draining.
+    Perhaps due to throttling latency of ~30 BX?
+    Maybe we should wait for bug-fixed fixed firmware on the FRLs?
+    Helmut is giving us a new firmware.
+
+Christoph will contact us at our next running opportunity.
+
+-Souvik

@@ -1,0 +1,32 @@
+Pixel Online Software - Detector Control Software Integration for Power Up Sequence
+===================================================================================
+
+1. Has worked from three conditions:
+
+  a. Vdigi = 0 V    : PixelFECSupervisor waits in the "Configuring" state.
+
+  b. Vdigi = 2.1 V  : PixelFECSupervisor programs the DACs, tries to check the currents (code not in), 
+                      and sends a message to DCS to ramp up the voltage to 2.6 V.
+                      It stays in the "Configuring" state.
+
+  c. Vdigi = 2.6 V  : PixelFECSupervisor programs the DACs, Masks, Trims and TBM.
+                      It goes to the "Configured" state.
+
+2. If Portcard and CCU are OFF then the PixelTKFECSupervisor throws an exception and crashes out.
+   It should wait in the "Configuring" state.
+
+3. We wait 1 second after ramping up Vdigi to 2.6 V. More details on 1 second?
+
+4. Should scale with mutiples modules, all 8 power partitions, and BPix. Not tested.
+
+5. Code to check the currents in PixelFECSupervisor::readCurrent() needs to be written. Ben, Anders?
+
+6. PixelDCSFSMInterface uses stray XML files which are unversioned. 
+   It should get its parameters from the Configuration.xml file because that's versioned in RS 3. 
+   Christian recognizes the importance but doesn't want to work on it. Ben?
+
+- Souvik Das
+25 June 2008
+
+===================================================================================
+

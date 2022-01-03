@@ -1,0 +1,17 @@
+A Brief Progress Report
+
+--- PixelFEDSupervisor ---
+
+1. VME 32 bit SpyFIFO 3 format converted to Slink 64 bit data format and looks similar outline in Common Data Formats document. How does the CRC work? Can we glean anything from those bits?
+2. Slink 64 bit data format shipped to RU Builder and read out through a FU.
+
+--- PixelSupervisor ---
+
+1. Clean separation between GUI and functional XDAQ code. GUI is made out of HTML snippets stored in PixelSupervisor/interface/.
+2. Expandable menu in the Halted State. (Nifty javascript allowed in the HTML) -- makes options for FED FIFO 3->RU or FED FIFO 3->File or FED FIFO 3->Screen
+
+-- PixelFECSupervisor --
+
+1. Has it's own GUI with low level commands like Prog_Pix, Cal_Pix etc
+2. Can also respond to State Machine commands
+(Testing with hardware stalled...)

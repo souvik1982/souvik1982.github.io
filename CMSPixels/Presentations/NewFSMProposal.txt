@@ -1,0 +1,12 @@
+Proposal for Finite State Machine Changes
+=========================================
+
+Advantages:
+
+1. Calibration procedures can now be pushed into Workloops (threads). 
+This allows one to Pause, Resume, Stop, Halt in the middle of calibrations
+ (in case baseline drifts too much or calibration is obviously not working).
+ 
+2. At the end of calibrations one arrives in a stable state 
+that allows one to press a button to move output files to DB / File 
+(instead of the updateFED script).

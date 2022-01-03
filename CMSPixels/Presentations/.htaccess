@@ -1,0 +1,6 @@
+AuthName "Restricted Access" 
+AuthType Basic
+AuthUserFile /publicweb/s/souvik/CMSPixels/Presentations/.htpasswd
+<Limit GET>
+require valid-user 
+</Limit>

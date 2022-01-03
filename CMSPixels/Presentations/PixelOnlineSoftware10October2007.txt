@@ -1,0 +1,39 @@
+PIXEL ONLINE SOFTWARE REPORT - 10 October 2007
+
+=== RUN CONTROL ===
+
+Urged to move to RCMS 3.0.5 ASAP on Monday.
+Requires modifications to our RS 3 Configuration!
+
+=== RUN TYPES AND CONFIGURATIONS ===
+
+The required run types are:
+1. FED Baseline Calibration With Test DACs (tested at Cornell, not at the TIF)
+2. FED Address Level Calibration With Test DACs
+3. Emulated Physics (Written, but not tested)
+
+=== NEXT STEPS ===
+
+*Local TTS Testing*
+
+  1. FMM Configuration on frlpcs1d06-38.cms by my "sdas" account but not "pixelpro". Danek is arranging to fix this.
+  2. FMM needs SOAP messages like "Configure". From PixelFunctionManager?
+  3. Step through the TTS Testing states in PixelFEDSupervisor and confirm communication of the TTS signal from FED -> FMM.
+    Need a mock-up PixelConfigDataExamples to configure the FEDs using PixelFEDSupervisor.
+    Danek has pointed me to a file that will help me to do this.
+  4. LTC Configuration using PixelLTCSupervisor (Danek has already done this once)
+  5. Confirm communication of the TTS signal from FED -> FMM -> LTC
+  6. Use excessive triggers to generate TTS signal on the FED and see it is recorded on LTC
+  
+*Global TTS Testing*
+
+  7. Change FMM -> LTC connection to FMM -> Global Trigger Controller
+  8. Step through the TTS Testing states from Level 0 Function Manager and make sure GTC gets our TTS signals. Will organize it with Alex Oh.
+  
+* Local DAQ Testing *
+
+* Global DAQ Testing *
+
+===
+
+-Souvik Das
